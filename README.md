@@ -13,8 +13,6 @@ stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.ti
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/panelWranglR)](https://CRAN.R-project.org/package=panelWranglR)
-[![Travis build
-status](https://travis-ci.org/JSzitas/tidyPanelR.svg?branch=master)](https://travis-ci.org/JSzitas/tidyPanelR)
 <!-- badges: end -->
 
 **panelWranglR** is a simple package for wrangling panel data.
