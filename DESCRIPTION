@@ -1,0 +1,27 @@
+Package: panelWranglR
+Title: Panel Data Wrangling Tools For Common Tasks
+Version: 1.2.11
+Authors@R: 
+    person(given = "Juraj",
+           family = "Szitás",
+           role = c("aut", "cre"),
+           email = "szitas.juraj13@gmail.com")
+BugReports: https://github.com/JSzitas/panelWranglR/issues
+Description: The package provides a suite of simple functions to deal
+             with common data processing problems when dealing with
+             panel data. Examples are leading/lagging a panel, or
+             dummyfying variables. All of this is done efficiently
+             through a data.table backend. 
+License: GPL-3
+Depends: R (>= 3.2.0)
+Suggests: 
+    testthat (>= 2.1.0)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/JSzitas/panelWranglR
+RoxygenNote: 6.1.1
+Imports: 
+    data.table,
+    Hmisc,
+    caret
