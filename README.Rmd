@@ -68,7 +68,7 @@ library(panelWranglR)
     
 ```
 
-Or maybe we want to turn the cross section variable into a dummy variable:
+Or maybe we want to turn the cross section variable into several dummy variables:
 
 ````{r, eval = FALSE}
 panel_dummify( data = X,
