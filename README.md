@@ -57,7 +57,7 @@ Let’s start by lagging a whole panel of data, using 5 lags.
     both_vec_2 <- cbind(tim,geo_AT)
     both <- rbind(both_vec_1,both_vec_2)
     X <- cbind(both,X)
-    colnames(X) <- c("time", "geo", paste("V", 1:100, sep = ""))
+    colnames(X) <- c("time", "geo", paste("V", 1:100, sep = "")) 
 
 library(panelWranglR)
 
