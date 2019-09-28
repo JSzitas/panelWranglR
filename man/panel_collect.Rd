@@ -29,69 +29,34 @@ For time variables named like "Time_Var_i" with arbitrary i, the program will ch
 }
 \examples{
 
-\dontrun{
+x_1 <- rnorm( 10 )
+cross_levels <- c( "AT", "DE" )
+time <- seq(1:5)
+time <- rep(time, 2)
+geo_list <- list()
+for(i in 1:length(cross_levels))
+{
+  geo <- rep( cross_levels[i],
+                100 )
+                  geo_list[[i]] <- geo
+                  }
+                  geo <- unlist(geo_list)
+                  geo <- as.data.frame(geo)
 
-#'    x_1 <- rnorm( 10000 )
-   x_2 <- rnorm( 10000 ) + 0.5 * x_1
-   x_3 <- rnorm( 10000 ) + 0.1 * x_1
-   x_4 <- rnorm( 10000 ) - 0.7 * x_3
-   x_5 <- rnorm( 10000 ) + 0.5 * x_4
-   x_6 <- rnorm( 10000 )
-   x_7 <- rnorm( 10000 )
-   x_8 <- rnorm( 10000 )
-   x_9 <- rnorm( 10000 )
-   cross_levels <- c( "AT", "DE", "NO", "SWE", "GB", "CZE", "ES", "IS", "PL", "HU")
-   time <- seq(1:1000)
-   time <- rep(time, 10)
-   geo_list <- list()
-   for(i in 1:length(cross_levels))
-   {  geo <- rep( cross_levels[i],
-                 1000 )
-                   geo_list[[i]] <- geo }
-   geo <- unlist(geo_list)
-   geo <- as.data.frame(geo)
+ example_data <- cbind( time,
+                       x_1 )
+ example_data <- as.data.frame(example_data)
 
-   correl_data <-  do.call ( cbind, list( time, x_1, x_2,
-                                           x_3, x_4, x_5,
-                                           x_6, x_7, x_8,
-                                           x_9))
-   correl_data <- as.data.frame(correl_data)
-   correl_data <- cbind( geo,
-                         correl_data)
+ example_data <- cbind( geo,
+                       example_data)
+ names(example_data) <- c("geo", "time", "x_1")
 
-                         names(correl_data) <- c("geo", "time", "x_1",
-                                                 "x_2", "x_3",  "x_4",
-                                                 "x_5", "x_6",  "x_7",
-                                                 "x_8", "x_9")
-
- X <- correl_data
-
-panel_collect( X,
+# generate dummies using panel_dummify()
+ test_dummies <- panel_dummify( data = example_data,
+                                cross.section = "geo",
+                                time.variable = "time")
+panel_collect( data = test_dummies,
                cross.section = "geo",
-               cross.section.columns = c( "SWE", "AT", "NO" ))
-
-panel_collect( X,
-               cross.section = "geo",
-               cross.section.columns = c( "AT", "CZE", "DE",
-                                          "ES", "GB",  "HU",
-                                         "IS", "NO",  "PL",
-                                          "SWE"),
-               time.variable = "time",
-               time.variable.columns = c( "Time_Var_1",
-                                          "Time_Var_2",
-                                          "Time_Var_3",
-                                          "Time_Var_4",
-                                          "Time_Var_5" ))
-
-panel_collect( X,
-               time.variable = "time",
-               time.variable.columns = c( "Time_Var_1",
-                                          "Time_Var_2",
-                                          "Time_Var_3",
-                                          "Time_Var_4",
-                                          "Time_Var_5" ))
-
-}
-
+               cross.section.columns = c( "AT", "DE"))
 
 }

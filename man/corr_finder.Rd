@@ -16,7 +16,6 @@ Just a helper function for correl_panel.
 }
 \examples{
 
-\dontrun{
 X_1 <- rnorm(1000)
 X_2 <- rnorm(1000) + 0.6 * X_1
 X_3 <- rnorm(1000) - 0.4 * X_1
@@ -27,6 +26,6 @@ data_fm <- do.call( cbind, list( X_1,
 
 corr_finder( df = data_fm,
              corr_cutoff = 0.3 )
-}
+
 
 }

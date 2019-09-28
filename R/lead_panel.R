@@ -14,11 +14,11 @@
 #' @export
 #' @examples
 #'
-#' \dontrun{
-#' X <- matrix(rnorm(800000),8000,100)
-#' tim <- seq(1:4000)
-#' geo_AT <- rep(c("AT"), length = 4000)
-#' geo_NO <- rep(c("NO"), length = 4000)
+#'
+#' X <- matrix(rnorm(4000),800,5)
+#' tim <- seq(1:400)
+#' geo_AT <- rep(c("AT"), length = 400)
+#' geo_NO <- rep(c("NO"), length = 400)
 #' both_vec_1 <- cbind(tim,geo_NO)
 #' both_vec_2 <- cbind(tim,geo_AT)
 #' both <- rbind(both_vec_1,both_vec_2)
@@ -31,7 +31,7 @@
 #'           leads = 5,
 #'           variables.selected = c("V5","tim", "V7"),
 #'           keep.original = TRUE)
-#' }
+#'
 #'
 #'
 

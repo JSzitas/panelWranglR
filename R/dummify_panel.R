@@ -11,36 +11,34 @@
 #' @export
 #' @examples
 #'
-#' \dontrun{
-#' set.seed(1071)
-#' x_1 <- rnorm( 10000 )
-#' cross_levels <- c( "AT", "DE", "NO", "SWE", "GB", "CZE", "ES", "IS", "PL", "HU")
+#' x_1 <- rnorm( 10 )
+#' cross_levels <- c( "AT", "DE" )
 #' time <- seq(1:5)
-#' time <- rep(time, 2000)
+#' time <- rep(time, 2)
 #' geo_list <- list()
 #' for(i in 1:length(cross_levels))
 #' {
 #'   geo <- rep( cross_levels[i],
-#'                 1000 )
+#'                 100 )
 #'                   geo_list[[i]] <- geo
 #'                   }
 #'                   geo <- unlist(geo_list)
 #'                   geo <- as.data.frame(geo)
 #'
-#'  correl_data <- cbind( time,
-#'                        x_1 )
-#'  correl_data <- as.data.frame(correl_data)
+#'  example_data <- cbind( time,
+#'                         x_1 )
+#'  example_data <- as.data.frame(example_data)
 #'
-#'  correl_data <- cbind( geo,
-#'                        correl_data)
-#'  names(correl_data) <- c("geo", "time", "x_1")
+#'  example_data <- cbind( geo,
+#'                         example_data)
+#'  names(example_data) <- c("geo", "time", "x_1")
 #'
-#'  test_dummies_both <- panel_dummify( data = correl_data,
-#'                                      cross.section = "geo",
-#'                                      time.variable = "time")
+#'  test_dummies <- panel_dummify( data = example_data,
+#'                                 cross.section = "geo",
+#'                                 time.variable = "time")
 #'
 #'
-#' }
+#'
 #'
 #'
 

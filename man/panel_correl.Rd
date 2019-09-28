@@ -31,50 +31,31 @@ A function to find highly correlated variables in a panel of data, both by cross
 }
 \examples{
 
-\dontrun{
-   x_1 <- rnorm( 10000 )
-   x_2 <- rnorm( 10000 ) + 0.5 * x_1
-   x_3 <- rnorm( 10000 ) + 0.1 * x_1
-   x_4 <- rnorm( 10000 ) - 0.7 * x_3
-   x_5 <- rnorm( 10000 ) + 0.5 * x_4
-   x_6 <- rnorm( 10000 )
-   x_7 <- rnorm( 10000 )
-   x_8 <- rnorm( 10000 )
-   x_9 <- rnorm( 10000 )
-   cross_levels <- c( "AT", "DE", "NO", "SWE", "GB", "CZE", "ES", "IS", "PL", "HU")
-   time <- seq(1:1000)
-   time <- rep(time, 10)
+   x_1 <- rnorm( 100 )
+   x_2 <- rnorm( 100 ) + 0.5 * x_1
+   cross_levels <- c( "AT", "DE")
+   time <- seq(1:50)
+   time <- rep(time, 2)
    geo_list <- list()
    for(i in 1:length(cross_levels))
-   {  geo <- rep( cross_levels[i],
-                 1000 )
-                   geo_list[[i]] <- geo }
+   {  geo <- rep( cross_levels[i], 50 )
+      geo_list[[i]] <- geo }
    geo <- unlist(geo_list)
    geo <- as.data.frame(geo)
 
-   correl_data <-  do.call ( cbind, list( time, x_1, x_2,
-                                           x_3, x_4, x_5,
-                                           x_6, x_7, x_8,
-                                           x_9))
-   correl_data <- as.data.frame(correl_data)
-   correl_data <- cbind( geo,
-                         correl_data)
+   example_data <-  do.call ( cbind, list( time, x_1, x_2))
+   example_data <- as.data.frame(example_data)
+   example_data <- cbind( geo,
+                         example_data)
 
-                         names(correl_data) <- c("geo", "time", "x_1",
-                                                 "x_2", "x_3",  "x_4",
-                                                 "x_5", "x_6",  "x_7",
-                                                 "x_8", "x_9")
+                         names(example_data) <- c("geo", "time", "x_1",
+                                                 "x_2")
 
-   panel_correl( data = correl_data,
+   panel_correl( data = example_data,
                  cross.section = "geo",
                  time.variable = "time",
                  corr.threshold = 0.2,
                  autocorr.threshold = 0.5,
                  cross.threshold = 0.1)
-
-}
-
-
-
 
 }
