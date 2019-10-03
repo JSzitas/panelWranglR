@@ -32,7 +32,7 @@ You can install the stable version of panelWranglR from [CRAN](https://CRAN.R-pr
 ``` {r, eval = FALSE} 
 install.packages("panelWranglR")
 ```
-The latest version is also available from [github](https://github.com/JSzitas/panelWranglR) using the *devtools* package
+The latest, development version is also available from [github](https://github.com/JSzitas/panelWranglR) using the *devtools* package
 
 ``` {r, eval = FALSE}
 devtools::install_github("JSzitas/panelWranglR")

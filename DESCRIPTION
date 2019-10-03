@@ -1,6 +1,6 @@
 Package: panelWranglR
-Title: Panel Data Wrangling Tools for Common Tasks
-Version: 1.2.12
+Title: Panel Data Wrangling Tools
+Version: 1.2.13
 Authors@R: 
     person(given = "Juraj",
            family = "Szitás",
@@ -9,7 +9,7 @@ Authors@R:
 BugReports: https://github.com/JSzitas/panelWranglR/issues
 Description: Leading/lagging a panel, creating dummy variables,
              taking panel differences, looking for panel autocorrelations,
-             and more. Implemented via a 'data.table' backend. 
+             and more. Implemented via a 'data.table' back end. 
 License: GPL-3
 Depends: R (>= 3.2.0)
 Suggests: 
